@@ -1,3 +1,8 @@
+# (a) Create a well-formatted time plot of the data.
+# (b) Change the scale of the x axis, y axis, or both to logarithmic scale. Select the time plot that seems most linear.
+# (c) Comparing the two time plots, what can be said about the type of trend in the data?
+# (d) Compute ACF and PAF and comment 
+
 library(readxl)
 library(TSstudio)
 data = read_excel('C:/Users/P/Downloads/_selectedreference_Data Sets.xlsx','the og data souvi sales')
@@ -29,7 +34,7 @@ acf(log(ts(data[, 2], start = c(1995, 1), end = c(2001, 12), freq = 12)),12)
 pacf(ts(data[, 2], start = c(1995, 1), end = c(2001, 12), freq = 12),36)
 pacf(log(ts(data[, 2], start = c(1995, 1), end = c(2001, 12), freq = 12)),36)
 
-
+# Simulate a completely random process of length 48 with independent, chi-square distributed values each with 2  and then 8 degrees of freedom. 
 x1 = rchisq(48, df = 2)
 plot(x1, ylab = 'value', xlab = 'Time', type = 'b', bty = 'l', pch = 18, 
      main = 'Time series plot')
